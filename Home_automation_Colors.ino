@@ -27,17 +27,15 @@ void setup() {
   setup_wifi();
   client.setServer(mqtt_server, 1883);
   client.setCallback(callback);
-  
   pinMode(12, OUTPUT);
   strip.show();
 }
 
 void loop() {
-//  if (!client.connected()) {
-//    reconnect();
-//  }
+  if (!client.connected()) {
+    reconnect();
+  }
   client.loop();
-
 }
 
 void setup_wifi() {
@@ -55,11 +53,10 @@ void setup_wifi() {
   Serial.println("WiFi connected");
   Serial.println("IP address: ");
   Serial.println(WiFi.localIP());
-
 }
 
 void reconnect() {
-//   Loop until we're reconnected
+  // Loop until we're reconnected
   while (!client.connected()) {
     Serial.print("Attempting MQTT connection...");
     // Attempt to connect
