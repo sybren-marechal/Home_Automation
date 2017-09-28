@@ -28,15 +28,14 @@ void setup() {
   client.setServer(mqtt_server, 1883);
   client.setCallback(callback);
   
-  client.connect("eefefeefeef");
   pinMode(12, OUTPUT);
   strip.show();
 }
 
 void loop() {
-  if (!client.connected()) {
-    reconnect();
-  }
+//  if (!client.connected()) {
+//    reconnect();
+//  }
   client.loop();
 
 }
