@@ -1,4 +1,3 @@
-
 //#include <SPI.h>
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
@@ -16,7 +15,7 @@ Adafruit_NeoPixel strip = Adafruit_NeoPixel(NUM_LEDS, PIN, NEO_GRBW + NEO_KHZ800
 const char* ssid     = "sybren";
 const char* password = "1111111111";
 const char* mqtt_server = "192.168.11.6";
-const char* TOPIC1 = "sybren";
+const char* TOPIC1 = "sybren/bed";
 
 
 //############################################### SETUP ###############################################
@@ -143,5 +142,4 @@ void sleep(uint32_t c, uint8_t wait) {
     delay(wait);
   }
 }
-
 
